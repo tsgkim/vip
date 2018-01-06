@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- 网站启用 https 不报错 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="baidu_union_verify" content="d458b6466d7a43f4596a35631a027b18">
+    <meta name="baidu-site-verification" content="BU1EtKgJQI" />
+    <title>tsgkim的vip视频网站</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport"
+          name="viewport">
+    <meta name=”description” content=”tsgkim的vip视频网站”>
+    <meta name=”keyword” content=”视频 vip会员 tsgkim 会员视频“>
+    <link rel="shortcut icon" href="http://resource.tsg.kim/favicon.png">
+    <script>
+        // 百度统计
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?3fac0f432d8766c2e9b2b27d228b3b30";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body style="background-color:#F6F6F6;">
+<div style="padding:10px;">
+    <div>
+        <form class="form-horizontal col-sm-12" style="">
+            <div class="form-group">
+                <label for="jk" class="col-sm-3 control-label">选择接口</label>
+                <div class="col-sm-2">
+                    <select class="form-control" id="jk"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="url" class="col-sm-3 control-label">播放地址</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control" id="url" rows="3" placeholder="将你需要观看的视频资源链接地址复制到此处"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-2">
+                    <button id="bf" type="button" class="btn btn-success btn-block" onclick="dihejk()">播放</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div class="panel panel-info" style="margin:10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">使用说明</h3>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                1、本网站可观看爱奇艺、腾讯、优酷、乐视等VIP影视。
+            </li>
+            <li class="list-group-item">
+                2、不懂加群（<b>300705365</b>）
+                <a target="_blank"
+                   href="//shang.qq.com/wpa/qunwpa?idkey=b291a4bfd002765a4e28a0aa7ba2b616b8b15017a59ce3037babfe8f7a35b10e"><img
+                        border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="tsgkim的vip视频网站"
+                        title="tsgkim的vip视频网站"></a>
+                （提供各种视频、翻墙、电子书资源）或者 <a target="_blank"
+                                       href="http://resource.tsg.kim/vip.gif">点我看如何操作</a> 。
+            </li>
+            <li class="list-group-item">
+                3、如果播放不出，请换接口或者在其它视频网站找到相同的链接再播放，如果所有接口都播放不出，请过段时间再播放。
+            </li>
+            <li class="list-group-item">
+                4、播放连续剧另外一集的时候，不能在原来的播放地址上点下一集后复制地址后播放，那样复制的地址是没有变化的，所以播放的都是同一集，应该在爱奇艺影视搜索页面里进入需要播放的集数，进入后再复制地址。
+            </li>
+            <li class="list-group-item">
+                5、部分影视不能全屏，如果鼠标移动到视频右下角，出现这样的 图标，点击就可以全屏，否则不能全屏。
+            </li>
+            <li class="list-group-item">
+                6、网站持续更新，欢迎推广。
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var data = [
+        {name: "接口1", url: "http://www.wmxz.wang/video.php?url="},
+        {name: "接口2", url: "http://jx.ejiafarm.com/dy.php?url="},
+        {name: "接口3", url: "http://api.47ks.com/webcloud/?v="},
+        {name: "接口4", url: "http://api.baiyug.cn/vip/index.php?url="},
+        {name: "接口5", url: "http://yyygwz.com/index.php?url="},
+        {name: "接口6", url: "http://api47ks.duapp.com/index.php?url="},
+        {name: "接口7", url: "http://www.vipjiexi.com/tong.php?url="},
+        {name: "接口8", url: "http://000o.cc/jx/ty.php?url="},
+        {name: "接口9", url: "http://www.yydy8.com/Common/?url="},
+        {name: "接口10", url: "http://yun.mt2t.com/yun?url="},
+        {name: "接口11", url: "http://www.vipjiexi.com/yun.php?url="},
+        {name: "接口12", url: "http://www.wmxz.wang/video.php?url="},
+        {name: "接口13", url: "http://www.chepeijian.cn/jiexi/vip.php?url="},
+        {name: "接口14", url: "http://api.nepian.com/ckparse/?url="},
+        {name: "接口15", url: "http://api.xfsub.com/index.php?url="},
+        {name: "接口16", url: "http://j.zz22x.com/jx/?url="},
+        {name: "接口17", url: "http://qtzr.net/s/?qt="},
+        {name: "接口18", url: "http://pupudy.com/url2.php?url="},
+        {name: "接口19", url: "http://pupudy.com/url3.php?url="},
+    ];
+
+    for (var i in  data) {
+        var opt = document.createElement("option");
+        opt.value = data[i].url;
+        opt.innerText = data[i].name;
+        document.getElementById('jk').appendChild(opt);
+    }
+
+
+    function dihejk() {
+        var diz = document.getElementById("url").value;
+        var jkurl = document.getElementById("jk");
+        var jk = document.getElementById("jk").selectedIndex;
+        var jkv = jkurl.options[jk].value;
+        window.open(jkv + diz);
+    }
+
+    window.tctipConfig = {
+        //最上面的文字
+        headText: "欢迎打赏支持我 ^_^",
+        //侧边栏文本
+        siderText: "打赏",
+        //侧边栏文本高度调整
+        siderTextTop: "-72px",
+        //侧边栏背景颜色
+        siderBgcolor: "#323d45",
+        //整个侧边栏的高度设置
+        siderTop: "118px",
+        //底部文字
+        buttomText: " ",
+        //底部文字链接
+        buttomLink: " ",
+        //显示列表
+        list: {
+            weixin: {
+                name: "微信", desc: "用微信给“tsgkim”打赏",
+                icon: "http://resource.tsg.kim/weixin.png",
+                qrimg: "http://resource.tsg.kim/wxPay.jpeg"
+            },
+            alipay: {
+                name: "支付宝", desc: "用支付宝给“tsgkim”打赏",
+                icon: "http://resource.tsg.kim/alipay.png",
+                qrimg: "http://resource.tsg.kim/aliPay.jpeg"
+            }
+
+        }
+    };
+</script>
+<link href="http://resource.tsg.kim/vip.all.css" rel="stylesheet"/>
+<script src="http://resource.tsg.kim/vip.all.js"></script>
+</body>
+</html>
+
