@@ -87,6 +87,18 @@
     </div>
 </div>
 
+<a class="livechat-girl js-livechat-girl animated" id="lc-girl-block-en_2" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1515503123&amp;site=qq&amp;menu=yes" target="_blank">
+    <img class="girl" border="0" src="../img/qq.png" alt="点击这里给我发消息" title="点击这里给我发消息">
+    <div class="js-livechat-hint livechat-hint rd-notice rd-notice-tooltip single-line hide_hint" id="qqAlert">
+        <div class="popover-content rd-notice-content">嘿！有什么能帮到您的吗？</div>
+    </div>
+    <div class="animated-circles js-animated-circles animated">
+        <div class="circle c-1"></div>
+        <div class="circle c-2"></div>
+        <div class="circle c-3"></div>
+    </div>
+</a>
+
 <script type="text/javascript">
     var data = [
         {name: "接口1", url: "http://www.wmxz.wang/video.php?url="},
@@ -157,6 +169,27 @@
     };
 </script>
 <script src="../js/vip.all.js"></script>
+<script type="text/javascript">
+    setInterval(function() {
+        $('.js-animated-circles').toggleClass('animated');
+    }, 4000);
+
+    $('#lc-girl-block-en_2').on({
+        'mouseover': function() {
+            $(this).find('.js-livechat-hint').removeClass('hide_hint').addClass('show_hint');
+        },
+        'mouseleave': function() {
+            $(this).find('.js-livechat-hint').removeClass('show_hint').addClass('hide_hint');
+        }
+    });
+
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || /(Android)/i.test(navigator.userAgent)) {
+        $("#lc-girl-block-en_2").attr("href", "mqqwpa://im/chat?chat_type=wpa&uin=1515503123&version=1&src_type=web&web_src=oicqzone.com");
+        $("#qqAlert").remove();
+    }else {
+        $("#lc-girl-block-en_2").attr("href", "http://wpa.qq.com/msgrd?v=3&uin=1515503123&site=oicqzone.com&menu=yes");
+    }
+</script>
 </body>
 </html>
 
